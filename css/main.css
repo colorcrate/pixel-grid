@@ -1,0 +1,70 @@
+/*
+==========================================================================
+	BASE STYLES (scss/partials/_base.scss)
+==========================================================================
+*/
+*, *:after, *:before {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility; }
+
+a,
+a:link,
+a:visited {
+  color: #3a4699;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: all 250ms ease-in-out;
+  -moz-transition: all 250ms ease-in-out;
+  -ms-transition: all 250ms ease-in-out;
+  -o-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out; }
+  a:hover,
+  a:link:hover,
+  a:visited:hover {
+    color: black;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+
+body {
+  background: rgba(58, 70, 153, 0.15); }
+
+/*
+==========================================================================
+  TYPOGRAPHY (scss/partials/_typography.scss)
+==========================================================================
+*/
+body {
+  color: #333333;
+  font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+  font-weight: 400; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 20px 0;
+  font-family: 'Playfair Display', 'Times New Roman', Times, Georgia serif;
+  font-weight: 700;
+  font-style: italic; }
+  h1.bordered,
+  h2.bordered,
+  h3.bordered,
+  h4.bordered,
+  h5.bordered,
+  h6.bordered {
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+
+/*
+==========================================================================
+  PIXEL GRID (scss/partials/global/_pixel-grid.scss)
+==========================================================================
+*/

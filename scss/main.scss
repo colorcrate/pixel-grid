@@ -1,0 +1,19 @@
+// For more information on the organization of this document, check out this article:
+// http://thesassway.com/beginner/how-to-structure-a-sass-project
+
+// Modules, Variables & Normalize.css
+@import "partials/base"; // Base HTML + loading variables, mixins, colors
+
+// Partials 
+@import "partials/typography"; // Universal font styles
+
+// Reusable layout elements
+@import "partials/global/pixel-grid";
+
+// Site-wide elements
+// @import "partials/global/site-header";
+
+// Specific page partials
+// @import "partials/page/home";
+
+// Vendor

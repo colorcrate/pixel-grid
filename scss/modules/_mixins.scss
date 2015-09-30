@@ -1,0 +1,130 @@
+//
+//	BORDER BOX
+//
+@mixin border-box {
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+
+//
+//	FONT FAMILIES
+//
+@mixin font-family-proxima-nova-thin {
+	font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+	font-weight: 100;
+}
+@mixin font-family-proxima-nova-regular {
+	font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+}
+@mixin font-family-proxima-nova-bold {
+	font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+	font-weight: 700;
+}
+@mixin font-family-playfair-regular {
+	font-family: 'Playfair Display', 'Times New Roman', Times, Georgia serif;
+	font-weight: 400;
+}
+@mixin font-family-playfair-bold {
+	font-family: 'Playfair Display', 'Times New Roman', Times, Georgia serif;
+	font-weight: 700;
+}
+
+//
+//	FONT SIZES
+//
+$h1: 48px;
+$h2: 36px;
+$h3: 32px;
+$h4: 26px;
+$h5: 20px;
+$h6: 16px;
+$p: 16px;
+$small: 12px;
+
+$padding-small: 1.45rem;
+$padding-large: 2.8rem;
+$padding-huge: 6.25rem;
+
+//
+//	MISC. FONT STUFF
+//
+
+@mixin date {
+	display: block;
+  margin: 1em 0;
+  @include font-family-proxima-nova-thin;
+}
+
+@mixin barTitle {
+	position: relative;
+
+  text-align: center;
+  @include font-family-playfair-regular;
+  font-style: italic;
+  color: $black-75;
+
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    z-index: -1;
+
+    background: $black-15;
+  }
+
+  span {
+    padding: 0 15px;
+    background: $white;
+  }
+}
+
+@mixin text-shadow {
+	text-shadow: 1px 1px 5px $black-50;
+	filter: dropshadow(color=#000000, offx=1, offy=1);
+}
+
+@mixin font-smoothing {
+	-webkit-font-smoothing:antialiased;
+	-moz-font-smoothing:antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-o-font-smoothing:antialiased;
+	font-smoothing:antialiased;
+	text-rendering:optimizeLegibility;
+}
+
+@mixin link {
+	color: $blue;
+	text-decoration: none;
+	border-bottom: 1px solid transparent;
+	@include transition(all,250ms);
+}
+@mixin link-hover {
+	color: $black;
+	border-bottom: 1px solid $black-15;;
+}
+
+//
+//	BACKGROUNDS
+//
+@mixin background-cover {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+//
+//	TRANSITIONS
+//
+@mixin transition($type,$length) {
+	-webkit-transition: $type $length ease-in-out;
+	-moz-transition: $type $length ease-in-out;
+	-ms-transition: $type $length ease-in-out;
+	-o-transition: $type $length ease-in-out;
+	transition: $type $length ease-in-out;
+}

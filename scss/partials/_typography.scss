@@ -1,0 +1,42 @@
+/*
+==========================================================================
+  TYPOGRAPHY (scss/partials/_typography.scss)
+==========================================================================
+*/
+
+// Defaults
+body {
+  color: $dark-gray;
+  @include font-family-proxima-nova-regular;
+}
+
+strong,
+b {
+  
+}
+
+p {
+  
+}
+
+// Headlines
+h1,
+h2, 
+h3,
+h4,
+h5,
+h6 {
+  margin: 20px 0;
+  @include font-family-playfair-bold;
+  font-style: italic;
+
+  strong,
+  b {
+    
+  }
+
+  &.bordered {
+    padding-bottom: 15px;
+    border-bottom: 1px solid $black-15;
+  }
+}

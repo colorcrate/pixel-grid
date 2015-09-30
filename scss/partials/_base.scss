@@ -1,0 +1,25 @@
+@import "../modules/all"; // Variables, mixins, colors
+// @import "../vendor/normalize"; // Instead of a reset, we use normalize.css
+
+/*
+==========================================================================
+	BASE STYLES (scss/partials/_base.scss)
+==========================================================================
+*/
+*, *:after, *:before { // Global box sizing & font smoothing
+	@include border-box;
+	@include font-smoothing;
+}
+a,
+a:link,
+a:visited {
+  @include link;
+
+  &:hover {
+    @include link-hover;
+  }
+}
+
+body {
+  background: $blue-15;
+}
