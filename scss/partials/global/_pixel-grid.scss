@@ -3,3 +3,23 @@
   PIXEL GRID (scss/partials/global/_pixel-grid.scss)
 ==========================================================================
 */
+.pixel-grid {
+  @include flexbox;
+  @include flex-wrap(wrap);
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  // border: 1px solid $blue;
+}
+
+.pixel {
+  background: $white;
+  @include transition(opacity,250ms);
+
+  &.animating {
+    opacity: 0;
+  }
+}
