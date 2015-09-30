@@ -93,3 +93,6 @@ h6 {
   transition: opacity 250ms ease-in-out; }
   .pixel.animating {
     opacity: 0; }
+    .pixel.animating.origin {
+      opacity: 1;
+      background: red; }

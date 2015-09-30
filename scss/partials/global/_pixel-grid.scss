@@ -21,5 +21,10 @@
 
   &.animating {
     opacity: 0;
+
+    &.origin {
+      opacity: 1;
+      background: red;
+    }
   }
 }

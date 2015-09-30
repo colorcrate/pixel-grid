@@ -48,9 +48,9 @@ var pg = (function($) {
   var grid = (function() {
 
     var settings = {
-      rows: 25,
-      columns: 25,
-      spreadChance: 20 // Percent chance that a mouse event will spread
+      rows: 40,
+      columns: 40,
+      spreadChance: 30 // Percent chance that a mouse event will spread
     };
     
     var setup = function() {
@@ -85,16 +85,19 @@ var pg = (function($) {
       }
     };
 
-    var animatePixel = function($pixel) {
+    var animatePixel = function($pixel,origin) {
+      if (origin === true) {
+        $pixel.addClass('origin');  
+      }
       $pixel.addClass('animating');
       setTimeout(function() {
-        $pixel.removeClass('animating')
+        $pixel.removeClass('animating origin')
       }, 1000);
     };
 
     var trigger = function($pixel,chance) {
       // Determine if the function will progress w/ random number.
-      var spreadRand = Math.random() * (100 - 0) + 0;
+      var spreadRand = Math.random() * 100;
       
       // if (chance == 100) {
       //   console.log('______________');
@@ -102,10 +105,16 @@ var pg = (function($) {
       // console.log('r' + $pixel.attr('data-row') + ', c' + $pixel.attr('data-column'));
       // console.log(spreadRand);
       // console.log(spreadRand <= chance);
-      
+
       if (spreadRand <= chance) {
         // Run the animation
-        animatePixel($pixel);
+        if (chance === 100) {
+          animatePixel($pixel,true);  
+        }
+        else {
+          animatePixel($pixel,false);
+        }
+        
         // Run the animation on neighbor pixels
         var currentPixel = {
           row: $pixel.attr('data-row'),
