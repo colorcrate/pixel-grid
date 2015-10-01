@@ -31,9 +31,6 @@ a:visited {
     color: black;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
 
-body {
-  background: rgba(58, 70, 153, 0.15); }
-
 /*
 ==========================================================================
   TYPOGRAPHY (scss/partials/_typography.scss)
@@ -82,7 +79,11 @@ h6 {
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0; }
+  left: 0;
+  background: rgba(58, 70, 153, 0.15);
+  background-position: left center;
+  background-size: auto 100%;
+  background-repeat: no-repeat; }
 
 .pixel {
   background: white;

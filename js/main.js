@@ -48,9 +48,9 @@ var pg = (function($) {
   var grid = (function() {
 
     var settings = {
-      rows: 40,
-      columns: 40,
-      spreadChance: 30 // Percent chance that a mouse event will spread
+      rows: 50,
+      columns: 50,
+      spreadChance: 15 // Percent chance that a mouse event will spread
     };
     
     var setup = function() {
@@ -97,7 +97,7 @@ var pg = (function($) {
 
     var trigger = function($pixel,chance) {
       // Determine if the function will progress w/ random number.
-      var spreadRand = Math.random() * 100;
+      var spreadRand = 1+ Math.floor(Math.random() * 100);
       
       // if (chance == 100) {
       //   console.log('______________');
@@ -155,22 +155,33 @@ var pg = (function($) {
             column: parseInt(currentPixel.column) - 1
           }
         ];
-        for (i=0;i<surroundingPixels.length;i++) {
+
+        // Shuffle the array of surrounding pixels.
+        // This ensures there's no unintended non-randomness in the
+        // generated pattern (without this, pixels tend to be generated
+        // up and to the right).
+        // surroundingPixels = shuffleArray(surroundingPixels);
+
+        for (var i=0;i<surroundingPixels.length;i++) {
+          console.log(i);
           var $target = $('.pixel[data-row="' + surroundingPixels[i].row + '"][data-column="' + surroundingPixels[i].column + '"]');
           trigger($target,settings.spreadChance);
         }
       }
     };
 
-    // var triggerSurrounding = function($pixel,chance) {
+    var shuffleArray = function(array) {
+      var currentIndex = array.length, temporaryValue, randomIndex ;
+      while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
 
-    //   if (!$pixel.hasClass('animating')) {
-    //     trigger($pixel,settings.spreadChance);
-    //   }
-    //   else {
-    //     return;
-    //   }
-    // };
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+      return array;
+    }
 
     return {
       setup: setup,
